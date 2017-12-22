@@ -35,7 +35,7 @@ angular.module('directive.g+signin', []).
                   longtitle: false,
                   theme: 'dark',
                   autorender: true,
-                  access_type : online,
+                  access_type : 'online',
                   customtargetid: 'googlebutton'
               };
 
@@ -91,7 +91,7 @@ angular.module('directive.g+signin', []).
                       //Initialize Auth2 with our clientId
                       gapi.load('auth2', function () {
                           var googleAuthObj =
-                          gapi.auth2.init({
+                          gapi.auth2.getAuthInstance({
                               client_id: defaults.clientid,
                               cookie_policy: defaults.cookiepolicy
                           });
